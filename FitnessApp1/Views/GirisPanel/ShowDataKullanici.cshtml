@@ -1,0 +1,53 @@
+﻿@model List<kullanici>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Data</title>
+    <style>
+        /* Stillemeler burada yapılabilir */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antrenör Verileri</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Kullanici Adı</th>
+                <th>Kullanici Soyadı</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.kullanici_ad</td>
+                    <td>@item.kullanici_soyad</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
